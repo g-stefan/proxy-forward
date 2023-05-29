@@ -1,0 +1,15 @@
+// Proxy Forward
+// Copyright (c) 2023 Grigore Stefan <g_stefan@yahoo.com>
+// MIT License (MIT) <http://opensource.org/licenses/MIT>
+// SPDX-FileCopyrightText: 2023 Grigore Stefan <g_stefan@yahoo.com>
+// SPDX-License-Identifier: MIT
+
+#ifndef XYO_PROXYFORWARD_COPYRIGHT_RH
+#define XYO_PROXYFORWARD_COPYRIGHT_RH
+
+#define XYO_PROXYFORWARD_COPYRIGHT "Copyright (c) 2023 Grigore Stefan <g_stefan@yahoo.com>"
+#define XYO_PROXYFORWARD_PUBLISHER "Grigore Stefan"
+#define XYO_PROXYFORWARD_COMPANY XYO_PROXYFORWARD_PUBLISHER
+#define XYO_PROXYFORWARD_CONTACT "g_stefan@yahoo.com"
+
+#endif

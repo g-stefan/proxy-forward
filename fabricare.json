@@ -1,0 +1,21 @@
+{
+	"solution": {
+		"name" : "proxy-forward",
+		"type" : "xyo-cpp",
+		"projects": [
+			{
+				"name" : "proxy-forward",
+				"make" : "exe.static",
+				"SPDX-License-Identifier": "MIT",
+				"sourcePath" : "XYO/ProxyForward",
+				"dependency" : [
+					"xyo-networking",
+					"xyo-system",
+					"xyo-win"
+				]
+			}
+		],
+		"releaseDev" : false,
+		"hasGithub" : true
+	}
+}

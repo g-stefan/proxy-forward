@@ -1,0 +1,128 @@
+{
+	// See https://go.microsoft.com/fwlink/?LinkId=733558
+	// for the documentation about the tasks.json format
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Build",
+			"type": "shell",
+			"windows": {
+				"command": "fabricare make",
+			},
+			"linux": {
+				"command": "fabricare make",
+			},
+			"problemMatcher": [
+				"$msCompile", "$gcc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		},
+		{
+			"label": "Test",
+			"type": "shell",
+			"windows": {
+				"command": "fabricare test",
+			},
+			"linux": {
+				"command": "fabricare test",
+			},
+			"problemMatcher": [
+				"$msCompile", "$gcc"
+			]
+		},
+		{
+			"label": "Analyze",
+			"type": "shell",
+			"windows": {
+				"command": "fabricare analyze",
+			},
+			"linux": {
+				"command": "fabricare analyze",
+			},
+			"problemMatcher": [
+				"$msCompile", "$gcc"
+			]
+		},
+		{
+			"label": "Clean",
+			"type": "shell",
+			"windows": {
+				"command": "fabricare clean",
+			},
+			"linux": {
+				"command": "fabricare clean",
+			},
+			"problemMatcher": [
+				"$msCompile", "$gcc"
+			]
+		},
+		{
+			"label": "Release",
+			"type": "shell",
+			"windows": {
+				"command": "fabricare release",
+			},
+			"linux": {
+				"command": "fabricare release",
+			},
+			"problemMatcher": [
+				"$msCompile", "$gcc"
+			]
+		},
+		{
+			"label": "Install",
+			"type": "shell",
+			"windows": {
+				"command": "fabricare install",
+			},
+			"linux": {
+				"command": "fabricare install",
+			},
+			"problemMatcher": [
+				"$msCompile", "$gcc"
+			]
+		},
+		{
+			"label": "Version",
+			"type": "shell",
+			"windows": {
+				"command": "fabricare version",
+			},
+			"linux": {
+				"command": "fabricare version",
+			},
+			"problemMatcher": [
+				"$msCompile", "$gcc"
+			]
+		},
+		{
+			"label": "Build documentation",
+			"type": "shell",
+			"windows": {
+				"command": "mkdocs build",
+			},
+			"linux": {
+				"command": "mkdocs build",
+			},
+			"problemMatcher": [
+				"$msCompile", "$gcc"
+			]
+		},
+		{
+			"label": "Check licenses",
+			"type": "shell",
+			"windows": {
+				"command": "ubuntu2204.exe -c 'reuse lint'",
+			},
+			"linux": {
+				"command": "reuse lint",
+			},
+			"problemMatcher": [
+				"$msCompile", "$gcc"
+			]
+		}
+	]
+}

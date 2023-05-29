@@ -1,0 +1,14 @@
+// Proxy Forward
+// Copyright (c) 2023 Grigore Stefan <g_stefan@yahoo.com>
+// MIT License (MIT) <http://opensource.org/licenses/MIT>
+// SPDX-FileCopyrightText: 2023 Grigore Stefan <g_stefan@yahoo.com>
+// SPDX-License-Identifier: MIT
+
+#include <XYO/ProxyForward/Application.rh>
+#include <XYO/ProxyForward/Copyright.rh>
+#include <XYO/ProxyForward/Version.rh>
+
+1  ICON "Application.ico"
+
+XYO_APPLICATION_VERSION_INFO(XYO_PROXYFORWARD,"proxy-forward.exe","Proxy Forward")
+XYO_APPLICATION_MANIFEST("Application.manifest")
