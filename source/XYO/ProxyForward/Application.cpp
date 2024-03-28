@@ -15,7 +15,7 @@ namespace XYO::ProxyForward {
 
 	static const int defaultThreadCount = 64;
 
-	Multithreading::Semaphore Application::serverStopEvent;
+	Semaphore Application::serverStopEvent;
 
 	Application::Application() {
 		className_ = "Proxy Forward";

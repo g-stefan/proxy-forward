@@ -12,9 +12,10 @@
 #endif
 
 namespace XYO::ProxyForward {
+	typedef XYO::Multithreading::Semaphore Semaphore;
 
 	class Application : public virtual SimpleApplication {
-			XYO_DISALLOW_COPY_ASSIGN_MOVE(Application);
+			XYO_PLATFORM_DISALLOW_COPY_ASSIGN_MOVE(Application);
 
 		public:
 			Application();
@@ -38,7 +39,7 @@ namespace XYO::ProxyForward {
 			String proxyAuthorization;
 			String proxyAddress;
 			// ---
-			static Multithreading::Semaphore serverStopEvent;
+			static Semaphore serverStopEvent;
 			Thread serverThread;
 			Socket server;
 			Socket *client;
