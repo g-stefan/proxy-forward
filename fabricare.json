@@ -5,7 +5,7 @@
 		"projects": [
 			{
 				"name" : "proxy-forward",
-				"make" : "exe.static",
+				"make" : "exe",
 				"SPDX-License-Identifier": "MIT",
 				"sourcePath" : "XYO/ProxyForward",
 				"dependency" : [
