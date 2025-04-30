@@ -1,7 +1,7 @@
 // Proxy Forward
-// Copyright (c) 2023-2024 Grigore Stefan <g_stefan@yahoo.com>
+// Copyright (c) 2023-2025 Grigore Stefan <g_stefan@yahoo.com>
 // MIT License (MIT) <http://opensource.org/licenses/MIT>
-// SPDX-FileCopyrightText: 2023-2024 Grigore Stefan <g_stefan@yahoo.com>
+// SPDX-FileCopyrightText: 2023-2025 Grigore Stefan <g_stefan@yahoo.com>
 // SPDX-License-Identifier: MIT
 
 #include <XYO/ProxyForward/Dependency.hpp>
@@ -84,14 +84,12 @@ namespace XYO::ProxyForward {
 			if (StringCore::beginWith(cmdS[i], "@")) {
 				String content;
 				if (System::Shell::fileGetContents(&cmdS[i][1], content)) {
-					int cmdNX;
-					char **cmdSX;
+					XYO::System::ShellArguments shellArguments;
 					int m;
-					System::Shell::mainArgsSet(content, cmdNX, cmdSX);
-					for (m = 0; m < cmdNX; ++m) {
-						cmdLine.push(cmdSX[m]);
+					shellArguments.set(content);
+					for (m = 0; m < shellArguments.cmdN; ++m) {
+						cmdLine.push(shellArguments.cmdS[m]);
 					};
-					System::Shell::mainArgsDelete(cmdNX, cmdSX);
 					continue;
 				};
 				msg = String("Error: file not found - ") + &cmdS[i][1] + "\n";
