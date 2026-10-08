@@ -1,5 +1,6 @@
 {
 	"solution": {
+		"namespace" : "xyo",
 		"name" : "proxy-forward",
 		"type" : "xyo-cpp",
 		"projects": [
@@ -12,6 +13,16 @@
 					"xyo-networking",
 					"xyo-system",
 					"xyo-win"
+				]
+			},
+			{
+				"name" : "test.01",
+				"make" : "exe",
+				"category" : "test",
+				"SPDX-License-Identifier": "Unlicense",
+				"dependency" : [
+					"xyo-networking",
+					"xyo-system"
 				]
 			}
 		],

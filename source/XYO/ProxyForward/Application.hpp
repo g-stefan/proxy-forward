@@ -40,27 +40,39 @@ namespace XYO::ProxyForward {
 			String proxyAddress;
 			// ---
 			static Semaphore serverStopEvent;
+			// notified by a connection thread when its slot is free
+			Semaphore slotFreeEvent;
 			Thread serverThread;
 			Socket server;
-			Socket *client;
-			Socket *proxy;
-			Thread *thread;
 			int threadCount;
-			int threadIndex;
 			// ---
-			struct Internal {
+			// One slot for each connection.
+			// Sockets are owned by the server thread while the slot is free
+			// and by the connection threads while the slot is busy.
+			struct Connection {
 					Application *super;
-					Socket *client;
-					Socket *proxy;
+					Socket client;
+					Socket proxy;
+					Thread reader;
+					Thread writer;
+					TAtomic<bool> busy;
+					TAtomic<bool> activity;
+					// set by the first connection thread that ends, the other one ends too,
+					// a socket wait does not end when the socket is shut down by this process
+					TAtomic<bool> closing;
 					char *bufferAtoB;
 					char *bufferBtoA;
-					int index;
+					char *header;
+					size_t bufferStart;
+					size_t bufferEnd;
+					size_t headerLength;
 			};
-			Internal *internal;
+			Connection *connection;
 			// ---
+			void stopServer();
 			static void threadServer(Application *);
-			static void threadAToB(Internal *);
-			static void threadBToA(Internal *);
+			static void threadAToB(Connection *);
+			static void threadBToA(Connection *);
 	};
 
 };
